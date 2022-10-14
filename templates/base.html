@@ -1,9 +1,70 @@
 <!doctype html>
-<title>{% block title %}{% endblock %} - Flaskr</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-<header>
-  {% block header %}{% endblock %}
-</header>
-<body>
-  <div>{% block content %}{% endblock %}</div>
-</body>
+<html lang="en">
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+
+  <header>
+
+    {% block header %}{% endblock %}
+  </header>
+  <body>
+    <h1>Klausur-inator</h1>
+      <!--Form to select Department, Study Type, and if Schüsselkompetenzen should be included-->
+    <form action="#" class="row g-3" method="post">
+    <div class="col-md-3">
+    <label for="validationDefault01" class="form-label">Fakultät</label>
+    <select class="form-select" id="validationDefault01" name="fak" required>
+        <option selected disabled value="">Choose...</option>
+        <option value="Allgemein">Allgemein</option>
+        <option value="Agrar">Agrar</option>
+        <option value="Bio_Psycho">Bio_Psycho</option>
+        <option value="Chemie">Chemie</option>
+        <option value="Forst">Forst</option>
+        <option value="Geo">Geo</option>
+        <option value="Juri">Juri</option>
+        <option value="Mathe">Mathe</option>
+        <option value="Medi">Medi</option>
+        <option value="Philo">Philo</option>
+        <option value="Physik">Physik</option>
+        <option value="Sowi">Sowi</option>
+        <option value="Theo">Theo</option>
+        <option value="Wiwi">Wiwi</option>
+
+
+
+    </select>
+  </div>
+    <div class="col-md-3">
+    <label for="validationDefault02" class="form-label">Bachelor / Master</label>
+    <select class="form-select" id="validationDefault02" name="bach" required>
+        <option selected disabled value="">Choose...</option>
+        <option value="B">Bachelor</option>
+        <option value="M">Master</option>
+        <option value="Mag">Magister?</option>
+        <option value="SK">Schlüsselkompetenz</option>
+        <option value="S">S... ?</option>
+    </select>
+  </div>
+    <div class="col-md-3">
+    <label for="validationDefault03" class="form-label">Auch Schlüsselkompetenzen?</label>
+    <select class="form-select" id="validationDefault03" name="sk" required>
+        <option selected disabled value="">Choose...</option>
+        <option value=1>Ja</option>
+        <option value=0>Nein</option>
+    </select>
+  </div>
+
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit" value="submit">Submit form</button>
+  </div>
+</form>
+    <div>{% block content %}{% endblock %}</div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+  <footer>
+    Ein Produkt der Langeweile von: [Maxime Bonnin][https://github.com/MaximeBonnin/klausur-inator)
+  </footer>
+</html>

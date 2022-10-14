@@ -167,7 +167,8 @@ def find_my_data(df, my_fak=[], my_bachelor=[], include_sk=False):
     output = df.query(f"Fakultät in @my_fak and Modul_Nr_1 in @my_bachelor")
 
     df_mean_per_doz = find_correct_mean(output).sort_values("Schnitt").reset_index(drop=True)
-    print(df_mean_per_doz)
+    df_mean_per_doz["Schnitt"] = df_mean_per_doz["Schnitt"].round(2)
+    return df_mean_per_doz
 
 
 def find_correct_mean(df):
@@ -187,8 +188,9 @@ def find_correct_mean(df):
 def analyze_main():
     df_raw = pd.read_csv("module_data.csv", index_col=0)
     # print(df_raw.head())
-    find_my_data(df=df_raw, my_fak=["Wiwi"], my_bachelor=["B"], include_sk=False)
+    my_data = find_my_data(df=df_raw, my_fak=["Wiwi"], my_bachelor=["B"], include_sk=False)
     print("Done!")
+    return my_data
 
 
 if __name__ == '__main__':

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Daten: {{ my_fak }} {{ my_bachelor }}
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+<p><b>Meine Fakultät:</b> {{ my_fak }} | <b>Mein Bachelor:</b> {{ my_bachelor }} | <b>Schlüsselkompetenzen:</b> {{ my_sk }}</p>
+
+
+<div>
+    <h2>Deine Daten:</h2>
+    {% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+    {% endfor %}
+<div/>
+{% endblock %}
