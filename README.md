@@ -23,6 +23,9 @@ Semester gesammelt) gefunden werden können. Anschließend können die Daten dan
 Um Anderen etwas Arbeit zu ersparen werde ich meine eigene Version von API Dokumentation 
 in diesem Repository hinzufügen, wenn ich dazu komme.
 
-### Daten manipulieren
+### Daten manipuliere
+Ich hae die Daten über mehrere schritte mit ``pandas`` funktionen verändert.
+Im Nachhinein hätte ich es gerne in einem Jupyter Notebook gemacht, da dies übersichtlicher wäre.
 
 ### App hosten
+Hosting der APP läuft über das Modul ``gunicorn`` und Heroku.
