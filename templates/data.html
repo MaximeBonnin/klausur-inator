@@ -8,7 +8,12 @@ Daten: {{ my_fak }} {{ my_bachelor }}
 {% endblock %}
 
 {% block content %}
-<p><b>Meine Fakultät:</b> {{ my_fak }} | <b>Mein Bachelor:</b> {{ my_bachelor }} | <b>Schlüsselkompetenzen:</b> {{ my_sk }}</p>
+<p align="center">
+  <b>Meine Fakultät:</b> {{ my_fak }} |
+  <b>Mein Bachelor:</b> {{ my_bachelor }} |
+  <b>Schlüsselkompetenzen:</b> {{ my_sk }}
+  {% if srch %} | <b>Suche:</b> {{ srch }} {% endif %}
+</p>
 
 
 <table class="table table-striped">

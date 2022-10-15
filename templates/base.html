@@ -1,68 +1,75 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="Gute Noten ohne mehr zu lernen!">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   </head>
-
-  <header>
-
-    {% block header %}{% endblock %}
-  </header>
-  <body>
+<body>
+  <div class="header">
     <h1 align="center"><a href="{{ url_for('index') }}">Klausur-inator</a></h1>
-      <!--Form to select Department, Study Type, and if Schüsselkompetenzen should be included-->
-    <form action="#" class="row g-3" method="post">
-    <div class="col-md-3">
-    <label for="validationDefault01" class="form-label">Fakultät</label>
-    <select class="form-select" id="validationDefault01" name="fak" required>
-        <option value="Allgemein">Allgemein (Nur Schlüsselkompetenzen)</option>
-        <option value="Agrar">Fakultät für Agrarwissenschaften</option>
-        <option value="Bio_Psycho">Fakultät für Biologie und Psychologie</option>
-        <option value="Chemie">Fakultät für Chemie</option>
-        <option value="Forst">Fakultät für Forstwissenschaften und Waldökologie</option>
-        <option value="Geo">Fakultät für Geowissenschaften und Geographie</option>
-        <option value="Juri">Juristische Fakultät</option>
-        <option value="Mathe">Fakultät für Mathematik und Informatik</option>
-        <option value="Medi">Universitätsmedizin</option>
-        <option value="Philo">Philosophische Fakultät</option>
-        <option value="Physik">Fakultät für Physik</option>
-        <option value="Sowi">Sozialwissenschaftliche Fakultät</option>
-        <option value="Theo">Theologische Fakultät</option>
-        <option value="Wiwi">Wirtschaftswissenschaftliche Fakultät</option>
-
-
-
-    </select>
+    <h5 class="text-muted" align="center">Gute Noten ohne mehr zu lernen!</h5>
   </div>
-    <div class="col-md-3">
-    <label for="validationDefault02" class="form-label">Bachelor / Master</label>
-    <select class="form-select" id="validationDefault02" name="bach" required>
-        <option value="B">Bachelor</option>
-        <option value="M">Master</option>
-        <option value="Mag">Magister?</option>
-        <option value="S">Staatsexamen?</option>
-        <option value="SK">Schlüsselkompetenz</option>
+    <div class="wrapper">
 
-    </select>
-  </div>
-    <div class="col-md-3">
-    <label for="validationDefault03" class="form-label">Auch Schlüsselkompetenzen?</label>
-    <select class="form-select" id="validationDefault03" name="sk" required>
-        <option value=0>Nein</option>
-        <option value=1>Ja</option>
-    </select>
-  </div>
+          <!--Form to select Department, Study Type, and if Schüsselkompetenzen should be included-->
+        <form action="#" class="row g-3" method="post">
+        <div class="col-md-3">
+        <label for="validationDefault01" class="form-label">Fakultät</label>
+        <select class="form-select" id="validationDefault01" name="fak" required>
+            <option value="Allgemein">Allgemein (Nur Schlüsselkompetenzen)</option>
+            <option value="Agrar">Fakultät für Agrarwissenschaften</option>
+            <option value="Bio_Psycho">Fakultät für Biologie und Psychologie</option>
+            <option value="Chemie">Fakultät für Chemie</option>
+            <option value="Forst">Fakultät für Forstwissenschaften und Waldökologie</option>
+            <option value="Geo">Fakultät für Geowissenschaften und Geographie</option>
+            <option value="Juri">Juristische Fakultät</option>
+            <option value="Mathe">Fakultät für Mathematik und Informatik</option>
+            <option value="Medi">Universitätsmedizin</option>
+            <option value="Philo">Philosophische Fakultät</option>
+            <option value="Physik">Fakultät für Physik</option>
+            <option value="Sowi">Sozialwissenschaftliche Fakultät</option>
+            <option value="Theo">Theologische Fakultät</option>
+            <option value="Wiwi">Wirtschaftswissenschaftliche Fakultät</option>
 
-  <div class="col-12">
-    <button class="btn btn-primary" type="submit" value="submit">Submit form</button>
-  </div>
-</form>
-    <div>{% block content %}{% endblock %}</div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  </body>
-  <footer>
+
+
+        </select>
+      </div>
+        <div class="col-md-3">
+        <label for="validationDefault02" class="form-label">Bachelor / Master</label>
+        <select class="form-select" id="validationDefault02" name="bach" required>
+            <option value="B">Bachelor</option>
+            <option value="M">Master</option>
+            <option value="Mag">Magister?</option>
+            <option value="S">Staatsexamen?</option>
+            <option value="SK">Schlüsselkompetenz</option>
+
+        </select>
+      </div>
+        <div class="col-md-3">
+        <label for="validationDefault03" class="form-label">Auch Schlüsselkompetenzen?</label>
+        <select class="form-select" id="validationDefault03" name="sk" required>
+            <option value=0>Nein</option>
+            <option value=1>Ja</option>
+        </select>
+      </div>
+        <div class="col-md-3">
+            <label for="validationDefault04" class="form-label">Modulname (optional)</label>
+            <input class="form-control me-2" id="validationDefault04" type="search" placeholder="Modulname" name="srch" aria-label="Search">
+        </div>
+
+      <div class="col-12" align="center">
+        <button class="btn btn-primary" type="submit" value="submit">Finde meine Klausur!</button>
+      </div>
+    </form>
+        <div>{% block content %}{% endblock %}</div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <div class="push"></div>
+    </div>
+  <div class="footer" align="center">
     Ein Produkt der Langeweile von: <a href="https://github.com/MaximeBonnin/klausur-inator">Maxime Bonnin</a>. Bei Beschwerden bitte <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwinlKrjmOD6AhWtxgIHHTMLBWQQwqsBegQICRAB&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DdQw4w9WgXcQ&usg=AOvVaw0aHtehaphMhOCAkCydRLZU">hier</a> klicken.
-  </footer>
+  </div>
+</body>
 </html>

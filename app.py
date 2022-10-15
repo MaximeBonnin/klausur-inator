@@ -9,46 +9,62 @@ DF_RAW = pd.read_csv(DATA_PATH, index_col=0)
 app = Flask(__name__)
 
 
+def handle_data_request(request):
+    print(request.form)
+    fak = request.form["fak"]
+    bach = request.form["bach"]
+    sk = request.form["sk"]
+    srch = request.form["srch"]
+
+    if len(srch) > 0:
+        return redirect(url_for("searched_data", fak=fak, bach=bach, sk=sk, srch=srch))
+
+    return redirect(url_for("data", fak=fak, bach=bach, sk=sk))
+
+
+
 @app.route("/", methods=['GET', "POST"])
 def index():
     if request.method == "POST":
-        # print(request.form)
-        fak = request.form["fak"]
-        bach = request.form["bach"]
-        sk = request.form["sk"]
+        return handle_data_request(request)
 
-        return redirect(url_for("data", fak=fak, bach=bach, sk=sk))
-
-    else:
-        fak_options = ["Wiwi", "Sowi", "Philo"]
-        bach_options = ["B", "M"]
-
-        return render_template("index.html", fak_options=fak_options, bach_options=bach_options)
+    return render_template("index.html")
 
 
 @app.route("/<fak>/<bach>/<sk>", methods=["GET", "POST"])
 def data(fak, bach, sk):
     if request.method == "POST":
-        fak = request.form["fak"]
-        bach = request.form["bach"]
-        sk = request.form["sk"]
-        return redirect(url_for("data", fak=fak, bach=bach, sk=sk))
+        return handle_data_request(request)
+
     if sk == "1":
         sk = True
     else:
         sk = False
-    # print("This happened")
+
     my_data = find_my_data(df=DF_RAW, my_fak=[fak], my_bachelor=[bach], include_sk=sk)
     return render_template("data.html", my_fak=fak, my_bachelor=bach, my_sk=sk, data=my_data)
+
+
+@app.route("/<fak>/<bach>/<sk>/<srch>", methods=["GET", "POST"])
+def searched_data(fak, bach, sk, srch):
+    if request.method == "POST":
+        return handle_data_request(request)
+
+    if sk == "1":
+        sk = True
+    else:
+        sk = False
+
+    my_data = find_my_data(df=DF_RAW, my_fak=[fak], my_bachelor=[bach], include_sk=sk)
+    if len(srch) > 0:
+        my_data = my_data[my_data["Studienmodul"].str.match(srch, case=False)]
+    return render_template("data.html", my_fak=fak, my_bachelor=bach, my_sk=sk, srch=srch, data=my_data)
 
 
 @app.route("/modul/<mod>", methods=["GET", "POST"])
 def modul(mod):
     if request.method == "POST":
-        fak = request.form["fak"]
-        bach = request.form["bach"]
-        sk = request.form["sk"]
-        return redirect(url_for("data", fak=fak, bach=bach, sk=sk))
+        return handle_data_request(request)
 
     else:
         my_data = get_mod_data(df=DF_RAW, mod_name=mod, agg=False)
@@ -59,10 +75,7 @@ def modul(mod):
 @app.route("/dozierend/<doz>", methods=["GET", "POST"])
 def dozierend(doz):
     if request.method == "POST":
-        fak = request.form["fak"]
-        bach = request.form["bach"]
-        sk = request.form["sk"]
-        return redirect(url_for("data", fak=fak, bach=bach, sk=sk))
+        return handle_data_request(request)
 
     else:
         my_data = get_doz_data(df=DF_RAW, doz_name=doz, agg=False)

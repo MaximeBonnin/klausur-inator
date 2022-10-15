@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+    background-color: #E6E6E6;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -50px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+    height: 50px; /* .push must be the same height as .footer */
+}
+
+/* unvisited link */
+a:link, a:visited{
+  color: #39393A;
+}
+
+/* mouse over link */
+a:hover, a:active {
+  color: #297373;
+}
+
+.header {
+    background-color: #39393a;
+}
+
+h1 a:hover, h1 a:active, h1 a:link, h1 a:visited {
+    color: #E6E6E6;
+}
+
+p, label, option, select {
+    color: #39393a;
+}
+
+.btn-primary {
+    color: #E6E6E6 !important;
+    background-color: #297373 !important;
+    border-color: color: #39393a !important;
+    input-color: color: #39393a !important;
+}
