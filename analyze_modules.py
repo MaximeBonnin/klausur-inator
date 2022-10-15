@@ -193,6 +193,34 @@ def analyze_main():
     return my_data
 
 
+def get_mod_data(df, mod_name, agg):
+    df.dropna(inplace=True)
+    subset = df.query("Studienmodul == @mod_name")
+    subset = subset[["Studienmodul", "Prüfer", "Notenschnitt", "Anzahl", "Semester"]]
+
+    if not agg:
+        subset["Notenschnitt"] = subset["Notenschnitt"].round(2)
+        return subset
+
+    output = find_correct_mean(subset)
+    output["Schnitt"] = output["Schnitt"].round(2)
+    return output
+
+
+def get_doz_data(df, doz_name, agg):
+    df.dropna(inplace=True)
+    subset = df.query("Prüfer == @doz_name")
+    subset = subset[["Studienmodul", "Prüfer", "Notenschnitt", "Anzahl", "Semester"]]
+
+    if not agg:
+        subset["Notenschnitt"] = subset["Notenschnitt"].round(2)
+        return subset
+
+    output = find_correct_mean(subset)
+    output["Schnitt"] = output["Schnitt"].round(2)
+    return output
+
+
 if __name__ == '__main__':
     analyze_main()
 

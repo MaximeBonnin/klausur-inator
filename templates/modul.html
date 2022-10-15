@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Modul: {{ mod }}
+{% endblock %}
+
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+<h3>Notenschnitt nach Dozierenden:</h3>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      {% for colname in agg_data.columns.values %}
+      <th scope="col">{{ colname }}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in agg_data.values.tolist() %}
+      <tr>
+        {% for item in row[:1] %}
+        <th>{{ item }}</th>
+        {% endfor %}
+
+        {% for item in row[1:2] %}
+        <td><a href="{{ url_for('dozierend', doz=item) }}">{{ item }}</a></td>
+        {% endfor %}
+
+        {% for item in row[2:] %}
+        <td>{{ item }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<h3>Alle Klausuren der letzten 10 Semester für: {{mod}}</h3>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      {% for colname in data.columns.values %}
+      <th scope="col">{{ colname }}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in data.values.tolist() %}
+      <tr>
+        {% for item in row[:1] %}
+        <th>{{ item }}</th>
+        {% endfor %}
+
+        {% for item in row[1:2] %}
+        <td><a href="{{ url_for('dozierend', doz=item) }}">{{ item }}</a></td>
+        {% endfor %}
+
+        {% for item in row[2:] %}
+        <td>{{ item }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

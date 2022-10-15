@@ -11,11 +11,30 @@ Daten: {{ my_fak }} {{ my_bachelor }}
 <p><b>Meine Fakultät:</b> {{ my_fak }} | <b>Mein Bachelor:</b> {{ my_bachelor }} | <b>Schlüsselkompetenzen:</b> {{ my_sk }}</p>
 
 
-<div>
-    <h2>Deine Daten:</h2>
-    {% for table in tables %}
-            {{titles[loop.index]}}
-            {{ table|safe }}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      {% for colname in data.columns.values %}
+      <th scope="col">{{ colname }}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in data.values.tolist() %}
+      <tr>
+        {% for item in row[:1] %}
+        <th><a href="{{ url_for('modul', mod=item) }}">{{ item }}</a></th>
+        {% endfor %}
+
+        {% for item in row[1:2] %}
+        <td><a href="{{ url_for('dozierend', doz=item) }}">{{ item }}</a></td>
+        {% endfor %}
+
+        {% for item in row[2:] %}
+        <td>{{ item }}</td>
+        {% endfor %}
+      </tr>
     {% endfor %}
-<div/>
+  </tbody>
+</table>
 {% endblock %}

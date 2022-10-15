@@ -11,27 +11,26 @@
     {% block header %}{% endblock %}
   </header>
   <body>
-    <h1>Klausur-inator</h1>
+    <h1 align="center"><a href="{{ url_for('index') }}">Klausur-inator</a></h1>
       <!--Form to select Department, Study Type, and if Schüsselkompetenzen should be included-->
     <form action="#" class="row g-3" method="post">
     <div class="col-md-3">
     <label for="validationDefault01" class="form-label">Fakultät</label>
     <select class="form-select" id="validationDefault01" name="fak" required>
-        <option selected disabled value="">Choose...</option>
-        <option value="Allgemein">Allgemein</option>
-        <option value="Agrar">Agrar</option>
-        <option value="Bio_Psycho">Bio_Psycho</option>
-        <option value="Chemie">Chemie</option>
-        <option value="Forst">Forst</option>
-        <option value="Geo">Geo</option>
-        <option value="Juri">Juri</option>
-        <option value="Mathe">Mathe</option>
-        <option value="Medi">Medi</option>
-        <option value="Philo">Philo</option>
-        <option value="Physik">Physik</option>
-        <option value="Sowi">Sowi</option>
-        <option value="Theo">Theo</option>
-        <option value="Wiwi">Wiwi</option>
+        <option value="Allgemein">Allgemein (Nur Schlüsselkompetenzen)</option>
+        <option value="Agrar">Fakultät für Agrarwissenschaften</option>
+        <option value="Bio_Psycho">Fakultät für Biologie und Psychologie</option>
+        <option value="Chemie">Fakultät für Chemie</option>
+        <option value="Forst">Fakultät für Forstwissenschaften und Waldökologie</option>
+        <option value="Geo">Fakultät für Geowissenschaften und Geographie</option>
+        <option value="Juri">Juristische Fakultät</option>
+        <option value="Mathe">Fakultät für Mathematik und Informatik</option>
+        <option value="Medi">Universitätsmedizin</option>
+        <option value="Philo">Philosophische Fakultät</option>
+        <option value="Physik">Fakultät für Physik</option>
+        <option value="Sowi">Sozialwissenschaftliche Fakultät</option>
+        <option value="Theo">Theologische Fakultät</option>
+        <option value="Wiwi">Wirtschaftswissenschaftliche Fakultät</option>
 
 
 
@@ -40,20 +39,19 @@
     <div class="col-md-3">
     <label for="validationDefault02" class="form-label">Bachelor / Master</label>
     <select class="form-select" id="validationDefault02" name="bach" required>
-        <option selected disabled value="">Choose...</option>
         <option value="B">Bachelor</option>
         <option value="M">Master</option>
         <option value="Mag">Magister?</option>
+        <option value="S">Staatsexamen?</option>
         <option value="SK">Schlüsselkompetenz</option>
-        <option value="S">S... ?</option>
+
     </select>
   </div>
     <div class="col-md-3">
     <label for="validationDefault03" class="form-label">Auch Schlüsselkompetenzen?</label>
     <select class="form-select" id="validationDefault03" name="sk" required>
-        <option selected disabled value="">Choose...</option>
-        <option value=1>Ja</option>
         <option value=0>Nein</option>
+        <option value=1>Ja</option>
     </select>
   </div>
 
