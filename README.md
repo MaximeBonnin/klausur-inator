@@ -7,6 +7,11 @@ ist es nicht leicht dort mehr mit ihnen zu arbeiten. Daher möchte ich eine Mög
 bieten die Klausurdaten zu manipulieren um z.B. herauszufinden welche Klausuren
 am leichtesten/schwersten sind oder welche Dozierenden bessere Noten vergeben.
 
+Funktionen die enthalten sein sollten sind:
+1. Das Filtern nach Modulen, 
+2. Das Filtern nach Dozierenden, 
+3. Das Suchen nach bestimmen Modulen.
+
 ## Umsetzung
 
 ### Daten sammeln
@@ -20,12 +25,13 @@ woraus die Daten für einzelne Klausurtermine (Ich habe nur Daten für die letzt
 Semester gesammelt) gefunden werden können. Anschließend können die Daten dann mit 
 ``pandas`` in Tabellenform gespeichert werden. Zur manipulation verwende ich zudem ``numpy``
 
-Um Anderen etwas Arbeit zu ersparen werde ich meine eigene Version von API Dokumentation 
-in diesem Repository hinzufügen, wenn ich dazu komme.
+Um Anderen etwas Arbeit zu ersparen werde ich meine eigene mini Version von API Dokumentation 
+in diesem Repository hinzufügen, wenn ich dazu komme. ZU finden als ``documentation.md``.
 
-### Daten manipuliere
-Ich hae die Daten über mehrere schritte mit ``pandas`` funktionen verändert.
+### Daten manipulieren
+Ich habe die Daten über mehrere Schritte mit ``pandas`` Funktionen verändert.
 Im Nachhinein hätte ich es gerne in einem Jupyter Notebook gemacht, da dies übersichtlicher wäre.
+Die Suche und Manipulation der Daten bei Nutzeranfragen werden über Funktionen in ``analyze_main.py`` gehandhabt.
 
 ### App hosten
-Hosting der APP läuft über das Modul ``gunicorn`` und Heroku.
+Hosting der APP läuft über das Modul ``gunicorn`` und Heroku. Zu finden ist die App [hier](klausur-inator.herokuapp.com).
