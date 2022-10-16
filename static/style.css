@@ -6,6 +6,18 @@ html, body {
     height: 100%;
     background-color: #E6E6E6;
 }
+body {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+h5 {
+    margin-bottom: 20px;
+}
+.content {
+    margin-top: 20px;
+}
 .wrapper {
     min-height: 100%;
     height: auto !important;
@@ -33,6 +45,8 @@ a:hover, a:active {
 h1 a:hover, h1 a:active, h1 a:link, h1 a:visited {
     color: #E6E6E6;
 }
+
+
 
 p, label, option, select {
     color: #39393a;

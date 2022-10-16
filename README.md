@@ -31,7 +31,7 @@ in diesem Repository hinzufügen, wenn ich dazu komme. ZU finden als ``documenta
 ### Daten manipulieren
 Ich habe die Daten über mehrere Schritte mit ``pandas`` Funktionen verändert.
 Im Nachhinein hätte ich es gerne in einem Jupyter Notebook gemacht, da dies übersichtlicher wäre.
-Die Suche und Manipulation der Daten bei Nutzeranfragen werden über Funktionen in ``analyze_main.py`` gehandhabt.
+Die Suche und Manipulation der Daten bei Nutzeranfragen werden über Funktionen in ``analyze_modules.py`` gehandhabt.
 
 ### App hosten
 Hosting der APP läuft über das Modul ``gunicorn`` und Heroku. Zu finden ist die App [hier](klausur-inator.herokuapp.com).

@@ -10,17 +10,31 @@ Klausur-inator
 {% block content %}
 <div>
     <h2>Beschreibung:</h2>
-    <p>Der <b>Klausur-Inator</b> kann dir helfen nach fairen Dozierenden und Klausuren zu suchen.</p>
-    <p>Die Daten basieren auf dem Statistikportal der Uni Göttingen und sind frei zugänglich.</p>
-    <p>Aus datenschutzrechtlichen Gründen werden Klausuren mit weniger als 10 Teilnehmenden nicht angezeigt.</p>
-    <p>Ich habe nur Daten der letzten 10 Semester angeguckt, da ältere Klausuren wahrscheinlich nicht viel über die nächsten Semester sagen.</p>
+    <p>Der <b>Klausur-Inator</b> kann dir helfen nach fairen Dozierenden und Klausuren zu suchen. Dafür habe ich die
+    Daten des Statistikportal FlexNow der Uni Göttingen heruntergeladen und zusammengefasst. Diese Daten sind frei zugänglich, da der
+    Server der Uni keine Form der Autorisierung benötigt. Aus datenschutzrechtlichen Gründen werden Klausuren mit weniger
+    als 10 Teilnehmenden nicht ausgegeben. Ich habe nur Daten der letzten 10 Semester angeguckt, da ältere Klausuren
+    wahrscheinlich nicht viel über die nächsten Semester sagen.</p>
+
     <h2>Umgang:</h2>
-    <p>Sag dem <b>Klausur-Inator</b> einfach für welchen Studiengang du gerne Daten hättest.</p>
-    <p>Er kann dir eine nach Notenschnitt sortiere Liste an Klausuren zeigen, damit du bessere Noten kriegst!</p>
-    <p>Denke auch daran, dass es Teilweise mehrere Dozierende für die gleiche Klausur gibt, etwas suchen ist bisher noch nötig.</p>
+    <p>Sag dem <b>Klausur-Inator</b> einfach, für welchen Studiengang du gerne Daten hättest. Dabei kannst du sowohl auswählen,
+    welche Fakultät für dich relevant ist als auch, ob du im Bachelor / Master oder andern Formen des Studiums bist.
+    Zudem kannst du dich entscheiden, ob du auch Schlüsselkompetenzen in den Ergebnissen haben möchtest. Zuletzt kannst du dann
+    noch nach bestimmten Modulnamen (leider noch nicht Modulnummer!) suchen, um deine Suche zu verfeinern.</p>
+    <p>Nachdem du die Suche ausführst, wird dir eine Tabelle mit den Daten angezeigt. Dort findest du die Studienmodule, die
+    Dozierenden und den (nach Anzahl der Personen die geschrieben haben gewichteten) Notenschnitt für das Modul. Wenn du mehr über
+    ein Modul oder über bestimmte Dozierende erfahren möchtest, kannst du sie anklicken.</p>
+    <p>Die Modul-Info sagt dir, welche Dozierenden das ausgewählte Modul anbieten und wie der jeweilige Schnitt ist.
+    Zudem erhältst  du eine Liste mit allen Klausuren der letzten 10 Semester. Damit kannst du gut einschätzen, ob es vielleicht
+    sinnvoll wäre bestimmte Dozierende zu umgehen und eine Klausur lieber im folgenden Semester bei einer anderen Person zu schreiben.</p>
+    <p>Die Dozierenden-Info sagt dir, welche Module noch von der Person angeboten werden. Das erlaubt dir schnell einen Überblick darüber zu kriegen,
+    ob ein besonders guter oder schlechter Schnitt mehr aufgrund der Klausur oder doch aufgrund der Dozierenden entstanden sind. Außerdem kannst
+    du so für Dozierende, die dir besonders gefallen mehr Klausuren finden und dein Studium so angenehm wie möglich zu gestalten.</p>
+
+
     <h2>Wie geht das Projekt weiter?</h2>
-    <p>Ich würde gerne noch einen filter nach speziellen Modulen (auch nach Modulnummer) hinzufügen.</p>
-    <p>Falls du noch Ideen hast, kannst du mir gerne eine Email schreiben: maxime.bonnin@gmx.de</p>
+    <p>Ich würde gerne noch einen Filter nach speziellen Modulen (auch nach Modulnummer) hinzufügen.</p>
+    <p>Falls du noch Ideen hast, kannst du mir gerne eine E-mail schreiben: <a href="mailto:maxime.bonnin@gmx.de">maxime.bonnin@gmx.de</a></p>
 </div>
 
 {% endblock %}
