@@ -6,11 +6,12 @@ import os
 MAIN_PATH = os.path.dirname( __file__ )
 DATA_PATH = os.path.join(MAIN_PATH, "module_data.csv")
 DF_RAW = pd.read_csv(DATA_PATH, index_col=0)
+DF_RAW["Studienmodul"] = "[" + DF_RAW["Modul_Nr"] + "] " + DF_RAW["Studienmodul"]
 app = Flask(__name__)
 
 
 def handle_data_request(request):
-    print(request.form)
+    # print(request.form)
     fak = request.form["fak"]
     bach = request.form["bach"]
     sk = request.form["sk"]
@@ -57,7 +58,10 @@ def searched_data(fak, bach, sk, srch):
 
     my_data = find_my_data(df=DF_RAW, my_fak=[fak], my_bachelor=[bach], include_sk=sk)
     if len(srch) > 0:
-        my_data = my_data[my_data["Studienmodul"].str.match(srch, case=False)]
+        my_data_mod = my_data[my_data["Studienmodul"].str.contains(srch, case=False)]
+        my_data_doz = my_data[my_data["Prüfer"].str.contains(srch, case=False)]
+        my_data = pd.concat([my_data_mod, my_data_doz])
+        my_data.sort_values("Schnitt").reset_index(drop=True)
     return render_template("data.html", my_fak=fak, my_bachelor=bach, my_sk=sk, srch=srch, data=my_data)
 
 
