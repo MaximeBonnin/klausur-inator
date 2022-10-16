@@ -189,6 +189,7 @@ def get_mod_data(df, mod_name, agg):
         return subset
 
     output = find_correct_mean(subset)
+    output = output.sort_values(by="Schnitt")
     output["Schnitt"] = output["Schnitt"].round(2)
     return output
 
@@ -203,6 +204,7 @@ def get_doz_data(df, doz_name, agg):
         return subset
 
     output = find_correct_mean(subset)
+    output = output.sort_values(by="Schnitt")
     output["Schnitt"] = output["Schnitt"].round(2)
     return output
 
