@@ -139,32 +139,18 @@ def clean_dataset(data):
 def find_my_data(df, my_fak=[], my_bachelor=[], include_sk=False):
     df.dropna(inplace=True)
 
-    if not my_fak:
-        fakults = {
-            "Sowi": "FAK%253D13",
-            "Chemie": "FAK%253D7",
-            "Agrar": "FAK%253D11",
-            "Bio_Psycho": "FAK%253D9",
-            "Forst": "FAK%253D10",
-            "Geo": "FAK%253D8",
-            "Mathe": "FAK%253D5",
-            "Physik": "FAK%253D6",
-            "Juri": "FAK%253D2",
-            "Medi": "FAK%253D3",
-            "Philo": "FAK%253D4",
-            "Theo": "FAK%253D1",
-            "Wiwi": "FAK%253D12"
-        }
-        my_fak = [k for k in fakults.keys()]
+    if my_fak == ["Alle"]:
+        my_fak = ["Sowi", "Chemie", "Agrar", "Bio_Psycho", "Forst", "Geo", "Mathe", "Physik",
+                  "Juri", "Medi", "Philo", "Theo", "Allgemein", "Wiwi"]
 
-    if not my_bachelor:
+    if my_bachelor == ["Alle"]:
         my_bachelor = ["B", "M", "Mag", "S"]
 
     if include_sk:
         my_bachelor.append("SK")
         my_fak.append("Allgemein")
 
-    output = df.query(f"Fakultät in @my_fak and Modul_Nr_1 in @my_bachelor")
+    output = df.query(f"Fakultät.isin(@my_fak) and Modul_Nr_1 == @my_bachelor")
 
     df_mean_per_doz = find_correct_mean(output).sort_values("Schnitt").reset_index(drop=True)
     df_mean_per_doz["Schnitt"] = df_mean_per_doz["Schnitt"].round(2)
