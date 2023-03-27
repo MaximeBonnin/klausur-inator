@@ -12,8 +12,10 @@ body {
   margin-right: 100px;
   margin-left: 100px;
 }
-h5 {
+h1 {
     margin-bottom: 20px;
+    padding-bottom: 10px;
+    font-size: 1.5em;
 }
 .content {
     margin-top: 20px;
@@ -42,10 +44,10 @@ a:hover, a:active {
     background-color: #39393a;
 }
 
-h1 a:hover, h1 a:active, h1 a:link, h1 a:visited {
+h2 a:hover, h2 a:active, h2 a:link, h2 a:visited {
     color: #E6E6E6;
+    font-size: 2em;
 }
-
 
 
 p, label, option, select {
@@ -55,6 +57,5 @@ p, label, option, select {
 .btn-primary {
     color: #E6E6E6 !important;
     background-color: #297373 !important;
-    border-color: color: #39393a !important;
-    input-color: color: #39393a !important;
+    border-color: #39393a !important;
 }
