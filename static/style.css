@@ -44,14 +44,14 @@ a:hover, a:active {
     background-color: #39393a;
 }
 
-h2 a:hover, h2 a:active, h2 a:link, h2 a:visited {
-    color: #E6E6E6;
-    font-size: 2em;
-}
-
-
 p, label, option, select {
     color: #39393a;
+}
+
+#klausur-inator a:hover, #klausur-inator a:active, #klausur-inator a:link, #klausur-inator a:visited {
+    color: #E6E6E6;
+    font-size: 3em;
+    font-weight: 500;
 }
 
 .btn-primary {

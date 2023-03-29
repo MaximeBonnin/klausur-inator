@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>{% block title %}{% endblock %}</title>
-    <meta name="description" content="Mit dem Klausur-Inator kannst du nach Dozierenden und Klausuren filtern um bessere Noten zu schreiben">
+    <meta name="description" content="Mit dem Klausur-Inator kannst du nach Dozierenden und Klausuren der Uni Göttingen filtern um bessere Noten zu schreiben!">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="canonical" href="https://klausur-inator.up.railway.app/">
@@ -11,7 +11,7 @@
 <body>
     <div class="wrapper">
         <div class="header">
-    <h2 id="klausur-inator" align="center"><a href="{{ url_for('index') }}">Klausur-inator</a></h2>
+    <p class="title-link" id="klausur-inator" align="center"><a href="{{ url_for('index') }}">Klausur-inator</a></p>
     <h1 id="main-title" class="text-muted" align="center">Finde die einfachsten Klausuren der Uni Göttingen!</h1>
   </div>
 
