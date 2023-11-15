@@ -35,4 +35,4 @@ Im Nachhinein hätte ich es gerne in einem Jupyter Notebook gemacht, da dies üb
 Die Suche und Manipulation der Daten bei Nutzeranfragen werden über Funktionen in ``analyze_modules.py`` gehandhabt.
 
 ### App hosten
-Hosting der APP läuft über das Modul ``gunicorn`` und ~~Heroku~~ Railway. Zu finden ist die App [hier](https://klausur-inator.up.railway.app/) (neue URL a Heroku keinen free plan mehr hat).
+Hosting der APP läuft über das Modul ``gunicorn`` und ~~Heroku~~ GCP. Zu finden ist die App [hier](https://klausurinator-4awxujlhtq-ey.a.run.app/) (neue URL a Heroku keinen free plan mehr hat).
